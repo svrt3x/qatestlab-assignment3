@@ -8,7 +8,7 @@ import myprojects.automation.assignment3.GeneralActions;
 public class CreateCategoryTest extends BaseScript {
     public static void main(String[] args) throws InterruptedException {
         // TODO prepare driver object
-        String categoryName = "testCategory-" + ((Math.random()*1000)%1000);
+        String categoryName = "testCategory-" + ((int)(Math.random()*1000));
         WebDriver driver = getConfiguredDriver();
 
         GeneralActions action = new GeneralActions(driver);
