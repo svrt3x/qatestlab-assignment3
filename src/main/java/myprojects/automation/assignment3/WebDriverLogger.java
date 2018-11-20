@@ -25,7 +25,10 @@ public class WebDriverLogger extends AbstractWebDriverEventListener {
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
         if (element != null){
-            LOGGER.info("Webdriver found element" + element.getTagName());}
+            LOGGER.info("Webdriver found element" + elementDescription(element));}
+        else {
+            LOGGER.info("Webdriver found element");
+        }
     }
 
 
