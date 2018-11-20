@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class WebDriverLogger extends AbstractWebDriverEventListener {
     private static final Logger LOGGER = LoggerFactory
-            .getLogger(WebDriverLogger.class);
+            .getLogger(WebDriverLogger.class.getName());
 
     @Override
     public void afterNavigateTo(String url, WebDriver driver) {
@@ -24,8 +24,10 @@ public class WebDriverLogger extends AbstractWebDriverEventListener {
 
     @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
-      //  LOGGER.info("Webdriver found element - " + elementDescription(element));
+        LOGGER.info("Webdriver found element" /*+ elementDescription(element)*/);
     }
+
+
 
     private String elementDescription(WebElement element) {
         String description = "tag:" + element.getTagName();

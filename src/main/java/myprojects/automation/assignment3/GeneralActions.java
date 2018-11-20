@@ -60,12 +60,6 @@ public class GeneralActions {
         driver.findElement(By.id("name_1")).sendKeys(categoryName);
         driver.findElement(By.id("category_form_submit_btn")).click();
         waitForContentLoad();
-        try {
-            driver.findElement(By.cssSelector(".alert alert-success"));
-        }
-        catch (NullPointerException e){
-            System.out.println("Категория не создана");
-        }
         driver.findElement(By.name("categoryFilter_name")).sendKeys(categoryName);
         driver.findElement(By.id("submitFilterButtoncategory")).click();
 
